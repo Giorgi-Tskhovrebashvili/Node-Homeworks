@@ -4,12 +4,12 @@ import moment from "moment";
 const port = 3002;
 
 let users = [
-    {
-        id: 1,
-        name: "gio",
-        email: "gio.cxovrebashvili@gmail.com",
-        password: "12345678",
-      }
+  {
+    id: 1,
+    name: "gio",
+    email: "gio.cxovrebashvili@gmail.com",
+    password: "12345678",
+  },
 ];
 
 const postServer = http.createServer((req, res) => {
