@@ -34,13 +34,13 @@ app.post("/api/add/expense", (req, res) => {
   if (!expenses) {
     res.json({ success: false, data: null });
   }
-  res.json({ success: true, data: expenses });
+  res.json({ success: true, data: expenses.length !== 0 ? expenses : null });
 });
 
 app.delete("/api/expenses/:id", (req, res) => {
     const expenseId = parseInt(req.params.id);
     const findExpenseId = expenses.find((u) => u.id === expenseId);
-    if (findExpenseId !== -1) {
+    if (findExpenseId > -1) {
         expenses.splice(findExpenseId, 1);
         const statused = res.status(404).json({ message: UserWasDeleted });
         res.json({ message: statused });
